@@ -1,0 +1,14 @@
+{
+  "name": "one-stop-shop",
+  "version": "1.0.0",
+  "description": "Mern shopping app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "author": "Rishabh Kukreja",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
