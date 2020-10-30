@@ -1,4 +1,4 @@
-import Order from '../models/productModel.js'
+import Order from '../models/orderModel.js'
 import asyncHandler from 'express-async-handler'     //to check routing errors
 
 // @desc Create new order
@@ -10,6 +10,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
     if(orderItems && orderItems.length === 0) {
         res.status(400)
         throw new Error('No order items')
+        return
     }  else {
         const order = new Order( {
             orderItems ,
@@ -29,4 +30,4 @@ const addOrderItems = asyncHandler(async (req, res) => {
 
 })
 
-export {addOrderItems{}
+export {addOrderItems}
