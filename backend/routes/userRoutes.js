@@ -1,3 +1,4 @@
+  
 import express from 'express'
 const router = express.Router()
 import {authUser, registerUser , getUserProfile, updateUserProfile} from '../controllers/userControllers.js'
