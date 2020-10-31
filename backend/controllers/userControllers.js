@@ -2,7 +2,6 @@ import Product from '../models/userModel.js'
 import asyncHandler from 'express-async-handler'    
 import User from '../models/userModel.js'
 import generateTokens  from '../utils/generateTokens.js'
-import generateToken from '../utils/generateTokens.js'
 
 // @desc Auth the user and get token
 // @route POST /api/users/login
@@ -18,7 +17,7 @@ const authUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             isAdmin: user.isAdmin,
-            token: generateToken(user._id)
+            token: generateTokens(user._id)
         })
     }   else {
         res.status(401)
@@ -52,7 +51,7 @@ const registerUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             isAdmin: user.isAdmin,
-            token: generateToken(user._id)
+            token: generateTokens(user._id)
         })
     }  else {
         res.status(400)
@@ -107,7 +106,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
             name: updatedUser.name,
             email: updatedUser.email,
             isAdmin: updatedUser.isAdmin,
-            token: generateToken(updatedUser._id)
+            token: generateTokens(updatedUser._id)
         })
 
 
