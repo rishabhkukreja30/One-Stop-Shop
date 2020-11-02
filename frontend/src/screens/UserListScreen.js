@@ -41,7 +41,7 @@ const UserListScreen = ({history}) => {
         <>
          <h1>Users</h1>
          {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> : (
-             <Table striped bordered hover responsive className='table-sm table-color'>
+             <Table striped bordered responsive className='table-sm table-color'>
                  <thead>
                      <tr>
                          <th>ID</th>
@@ -56,7 +56,7 @@ const UserListScreen = ({history}) => {
                          <tr key={user._id}>
                              <td>{user._id}</td>
                              <td>{user.name}</td>
-                     <td><a href={`mailto:{user.email}`}>{user.email}</a></td>
+                     <td><a className='mail-color' href={`mailto:{user.email}`}>{user.email}</a></td>
                              <td>{user.isAdmin ? (<i className='fas fa-check' style={{color: 'green'}}></i>) : (
                                  <i className='fas fa-times' style={{color: 'red'}}></i>
                              )  }</td>

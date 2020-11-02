@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col, Table } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -111,7 +110,7 @@ const ProfileScreen = ({ location, history }) => {
       <Col md={9}>
         <h2>My Orders</h2>
         {loadingOrders ? <Loader/> : errorOrders ? <Message variant='danger'>{errorOrders}</Message> : (
-          <Table striped bordered hover responsive className='table-sm'>
+          <Table striped bordered  responsive className='table-sm table-color'>
             <thead>
             <tr>
               <th>ID</th>
